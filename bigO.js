@@ -92,8 +92,6 @@ function compute(num) {
   return result;
 }
 
-console.log(compute(10))
-
 /* An efficient search
 *  Logarithemic - minIndex = currentIndex + 1 and maxIndex = currentIndex - 1 are shortening the probelm size 
 *  which is a property of logarithmic 
@@ -144,3 +142,215 @@ function isWhat(n) {
 /* Tower of Hanoi 
 *  Three disks -  
 */
+// function TOH(num, source, temp, dest) {
+//   if(num === 1){
+//       print(source, dest)
+//   }
+
+//   // if(num === 2) {
+//   //     print(source, temp)
+//   //     print(source, dest)
+//   //     print(temp, dest)
+//   // }
+
+//   // if(num === 3) {
+//   //     print(source, dest)
+//   //     print(source, temp)
+//   //     print(dest, temp)
+//   //     print(source, dest)
+//   //     print(temp, source)
+//   //     print(temp, dest)
+//   //     print(source, dest)
+//   // }
+
+// }
+
+function Hanoi(n, A, C, B) {
+  if(n==0)
+    return;
+  Hanoi(n-1, A, B, C);
+  print(A,C);
+  Hanoi(n-1, B, C, A);
+}
+
+function print(source, dest){
+    console.log(`moving${source} -> ${dest}`)
+}
+// Hanoi(4,'A','C','B')
+
+//Iterative 
+
+function countingSheep(num){
+  for(let i=num; i>=0; --i){
+    if(i === 0) {
+      return console.log('All sheep jumped over the fence');
+    }
+    console.log(i+': Another sheep jumps over the fence');
+  }
+}
+
+function powerCalculator(base, n){
+  if(n <= 0) {
+    return 'power must be greater than 0';
+  }
+  return base ** n
+}
+
+function reverseString(string){
+let result = ''
+  for(let i=string.length-1; i >= 0; --i){
+    result = result + string[i]
+  }
+  console.log(result)
+}
+
+function triangularNum(num) {
+let value = 0
+  for(let i=0; i<=num; i++){
+    value = value + i
+  }
+  console.log(value)
+}
+
+
+function stringSplitter(string,sym){
+let result = []
+let temp = ''
+  for(let i=0; i<string.length; i++){
+    if(string[i] != sym){
+      temp = temp + string[i]
+    }
+    else {
+      result = [...result, temp]
+      temp = ''
+    }
+  }
+  result = [...result, temp]
+  console.log(result)
+}
+
+function fibonacci(num){
+let result = 0
+let temp = [0,1,1]
+
+for(let i=3; i<num+1; i++){
+  temp = [...temp, (temp[i-1]+temp[i-2])]
+}
+  return temp[num]
+}
+
+function factorial(num){
+let temp = 1
+
+if (num == 0){
+  return 'No'
+}
+
+  for(let i=1; i<num+1; i++){
+    temp = temp * i
+  }
+  return temp 
+}
+
+console.log(factorial(5))
+
+// Recursion Big O 
+
+/* countSheep
+* o(n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* powerCalculatorRec
+* o(n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* reverseString
+* o(n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* triangularNumber
+* o(n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* stringSplitter
+* o(n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* factorial
+* o(n) - linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* fibonacci
+* o(2n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* maze
+* o(4n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* mazeAll
+* o(n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* anagrams
+* o(n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* organization
+* o(n) linear - running times are directly proportional to the size (n) of the input. 
+*/
+
+/* binaryRep 
+* o(n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
+//Interative Big O
+
+/* countSheep
+* o(n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* powerCalculatorRec
+* o(n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* reverseString
+* o(n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* triangularNumber
+* o(n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* stringSplitter
+* o(n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* factorial
+* o(n) - linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* fibonacci
+* o(2n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* maze
+* o(4n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* mazeAll
+* o(n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* anagrams
+* o(n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
+/* organization
+* o(n) linear - running times are directly proportional to the size (n) of the input. 
+*/
+
+/* binaryRep 
+* o(n) linear - running times are directly proportional to the size (n) of the input.
+*/
+
